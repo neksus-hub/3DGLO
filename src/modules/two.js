@@ -1,6 +1,7 @@
 const secondModule = () => {
-  const two = "two.js";
-  console.log(two);
+  //const timerHours = document.getElementById("timer-hours");
+  //const timerMinutes = document.getElementById("timer-minutes");
+  //const timerSeconds = document.getElementById("timer-seconds");
 };
 
 export default secondModule;
