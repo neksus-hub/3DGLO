@@ -25,13 +25,17 @@ const timer = (deadLine) => {
 
   const updateClock = () => {
     let getTime = getTimeRemaining();
-    timerDays.textContent = getTime.days;
-    timerHours.textContent = getTime.hours;
-    timerMinutes.textContent = getTime.minutes;
-    timerSeconds.textContent = getTime.seconds;
 
     if (getTime.timeRemaining > 0) {
-      setTimeout(updateClock, 1000);
+      setInterval(function () {
+        getTime = getTimeRemaining();
+        timerDays.textContent = getTime.days;
+        timerHours.textContent = getTime.hours;
+        timerMinutes.textContent = getTime.minutes;
+        timerSeconds.textContent = getTime.seconds;
+
+        console.log("1");
+      }, 1000);
     }
   };
 
