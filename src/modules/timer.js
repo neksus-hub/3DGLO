@@ -14,6 +14,19 @@ const timer = (deadLine) => {
     let minutes = Math.floor((timeRemaining / 60) % 60);
     let seconds = Math.floor(timeRemaining % 60);
 
+    if (days < 10) {
+      days = "0" + days;
+    }
+    if (hours < 10) {
+      hours = "0" + hours;
+    }
+    if (minutes < 10) {
+      minutes = "0" + minutes;
+    }
+    if (seconds < 10) {
+      seconds = "0" + seconds;
+    }
+
     return {
       days,
       hours,
