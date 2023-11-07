@@ -66,15 +66,15 @@ const getDayOfTheWeek = () => {
     todayObj.dayOfTheWeek = "Понедельник";
   } else if (todayObj.dayOfTheWeek === 2) {
     todayObj.dayOfTheWeek = "Вторник";
-  } else if (todayObj.dayOfTheWeek === 2) {
+  } else if (todayObj.dayOfTheWeek === 3) {
     todayObj.dayOfTheWeek = "Среда";
-  } else if (todayObj.dayOfTheWeek === 2) {
+  } else if (todayObj.dayOfTheWeek === 4) {
     todayObj.dayOfTheWeek = "Четверг";
-  } else if (todayObj.dayOfTheWeek === 2) {
+  } else if (todayObj.dayOfTheWeek === 5) {
     todayObj.dayOfTheWeek = "Пятница";
-  } else if (todayObj.dayOfTheWeek === 2) {
+  } else if (todayObj.dayOfTheWeek === 6) {
     todayObj.dayOfTheWeek = "Суббота";
-  } else if (todayObj.dayOfTheWeek === 2) {
+  } else if (todayObj.dayOfTheWeek === 7) {
     todayObj.dayOfTheWeek = "Воскресенье";
   }
 
