@@ -1,5 +1,7 @@
 import timer from "./modules/timer";
-import secondModule from "./modules/two";
+import menu from "./modules/menu";
+import modal from "./modules/modal";
 
 timer("10 november 2023");
-secondModule();
+menu();
+modal();

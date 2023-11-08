@@ -46,8 +46,6 @@ const timer = (deadLine) => {
         timerHours.textContent = getTime.hours;
         timerMinutes.textContent = getTime.minutes;
         timerSeconds.textContent = getTime.seconds;
-
-        console.log("1");
       }, 1000);
     }
   };
