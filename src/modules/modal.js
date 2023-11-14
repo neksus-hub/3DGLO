@@ -15,7 +15,6 @@ const modal = () => {
 
     if (count <= 23) {
       modalContent.style.top = count * 0.8 + "%";
-      console.log(count);
     } else {
       cancelAnimationFrame(idInterval);
     }
@@ -27,7 +26,6 @@ const modal = () => {
         width = document.documentElement.clientWidth;
         modal.style.display = `block`;
         if (width > 768) {
-          console.log(",jkmit");
           openPopup();
         }
       });

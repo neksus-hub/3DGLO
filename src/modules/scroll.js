@@ -4,8 +4,6 @@ const scroll = () => {
   const scrollBtn = document.querySelector('a[href*="#service-block"]');
   const serviceBlock = document.querySelector("#service-block");
 
-  console.log(serviceBlock);
-
   for (let item of menuItems) {
     item.addEventListener("click", function (event) {
       event.preventDefault();
