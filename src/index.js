@@ -4,6 +4,7 @@ import modal from "./modules/modal";
 import scroll from "./modules/scroll";
 import valid from "./modules/valid";
 import tabs from "./modules/tabs";
+import slider from "./modules/tabs";
 
 timer("15 november 2023");
 toggleMenu();
@@ -11,3 +12,4 @@ modal();
 scroll();
 valid();
 tabs();
+slider();
