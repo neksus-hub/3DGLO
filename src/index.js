@@ -6,10 +6,28 @@ import valid from "./modules/valid";
 import tabs from "./modules/tabs";
 import slider from "./modules/slider";
 
+const portfolioSliderClasses = {
+  sliderBlockClass: `.portfolio-content`,
+  slideClass: `.portfolio-item`,
+  dotsBlockClass: `.portfolio-dots`,
+  activeSlideClass: `portfolio-item-active`,
+  dotClass: `.dot`,
+  activeDotClass: `dot-active`,
+  buttonClass: `.portfolio-btn`,
+};
+
 timer("20 december 2023");
 toggleMenu();
 modal();
 scroll();
 valid();
 tabs();
-slider();
+slider(
+  portfolioSliderClasses.sliderBlockClass,
+  portfolioSliderClasses.slideClass,
+  portfolioSliderClasses.dotsBlockClass,
+  portfolioSliderClasses.activeSlideClass,
+  portfolioSliderClasses.dotClass,
+  portfolioSliderClasses.activeDotClass,
+  portfolioSliderClasses.buttonClass
+);
