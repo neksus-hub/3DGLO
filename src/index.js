@@ -5,6 +5,7 @@ import scroll from "./modules/scroll";
 import valid from "./modules/valid";
 import tabs from "./modules/tabs";
 import slider from "./modules/slider";
+import calc from "./modules/calc";
 
 const portfolioSliderClasses = {
   sliderBlockClass: `.portfolio-content`,
@@ -31,3 +32,4 @@ slider(
   portfolioSliderClasses.activeDotClass,
   portfolioSliderClasses.buttonClass
 );
+calc(100);
