@@ -8,9 +8,9 @@ const slider = function (
   buttonClass
 ) {
   const sliderBlock = document.querySelector(sliderBlockClass);
-  const slides = document.querySelectorAll(slideClass);
   const dotsBlock = document.querySelector(dotsBlockClass);
 
+  let slides = document.querySelectorAll(slideClass);
   let dots = document.querySelectorAll(dotClass);
 
   let timeInterval = 2000;
@@ -37,7 +37,8 @@ const slider = function (
   };
 
   const addDots = function () {
-    for (let i = 0; i < slides.length; i++) {
+    slides = document.querySelectorAll(slideClass);
+    for (let i = 0; i <= slides.length - 1; i++) {
       let dot = document.createElement("li");
       dot.classList.add("dot");
       if (slides[i].classList.contains(activeSlideClass)) {
@@ -56,8 +57,6 @@ const slider = function (
   };
 
   const autoSlide = function () {
-    removeDots();
-    addDots();
     prevSlide(slides, currentSlide, activeSlideClass);
     prevSlide(dots, currentSlide, activeDotClass);
 
@@ -69,6 +68,8 @@ const slider = function (
 
     nextSlide(slides, currentSlide, activeSlideClass);
     nextSlide(dots, currentSlide, activeDotClass);
+    removeDots();
+    addDots();
   };
 
   const startSlide = function (timer = 1500) {
@@ -87,7 +88,8 @@ const slider = function (
     }
 
     prevSlide(slides, currentSlide, activeSlideClass);
-    prevSlide(dots, currentSlide, activeDotClass);
+    removeDots();
+    addDots();
 
     if (e.target.matches("#arrow-right")) {
       currentSlide++;
@@ -110,7 +112,8 @@ const slider = function (
     }
 
     nextSlide(slides, currentSlide, activeSlideClass);
-    nextSlide(dots, currentSlide, activeDotClass);
+    removeDots();
+    addDots();
   });
 
   sliderBlock.addEventListener(
