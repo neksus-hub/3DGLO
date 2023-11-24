@@ -11,7 +11,7 @@ const valid = () => {
     const inputs = document.querySelectorAll("input");
 
     inputs.forEach((input) => {
-      if (input.type === "text") {
+      if (input.type === "text" && !input.classList.contains("calc-item")) {
         input.addEventListener("input", (e) => {
           e.target.value = e.target.value.replace(/[^а-яА-Я-\s]+/g, "");
         });
