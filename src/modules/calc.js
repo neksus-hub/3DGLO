@@ -5,6 +5,34 @@ const calc = (price = 100) => {
   const calcCount = document.querySelector(".calc-count");
   const calcDay = document.querySelector(".calc-day");
   const total = document.getElementById("total");
+  const time = 1;
+  let step = 100;
+
+  const outNum = (num) => {
+    let n = 0;
+
+    if (num < 100) {
+      step = 1;
+    } else if (num > 100 && num < 1000) {
+      step = 10;
+    } else if (num > 1000 && num < 10000) {
+      step = 100;
+    } else if (num > 10000) {
+      step = 1000;
+    } else if (num > 100000) {
+      step = 10000;
+    }
+
+    let t = Math.round(time / (num / step));
+
+    let interval = setInterval(() => {
+      n += step;
+      if (n == num) {
+        clearInterval(interval);
+      }
+      total.textContent = n;
+    }, t);
+  };
 
   const countCalc = function () {
     const calcTypeValue = +calcType.options[calcType.selectedIndex].value;
@@ -12,6 +40,7 @@ const calc = (price = 100) => {
 
     let calcCountValue = 1;
     let calcDayValue = 1;
+    let totalSec = 0;
 
     if (calcDay.value && calcDay.value < 5) {
       calcDayValue = 2;
@@ -24,9 +53,10 @@ const calc = (price = 100) => {
     }
 
     if (calcType.value && calcSquare.value) {
-      console.log(calcCountValue);
-      total.textContent =
+      totalSec =
         price * calcTypeValue * calcSquareValue * calcCountValue * calcDayValue;
+      console.log(totalSec);
+      outNum(totalSec);
     } else {
       total.textContent = 0;
     }
