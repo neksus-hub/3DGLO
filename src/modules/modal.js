@@ -1,4 +1,4 @@
-import { animate } from "./helper";
+import { animate } from "./helpers";
 
 const modal = () => {
   const modal = document.querySelector(".popup");
@@ -11,14 +11,16 @@ const modal = () => {
   let count = 0;
 
   const openPopup = () => {
-    count++;
-    idInterval = requestAnimationFrame(openPopup);
-
-    if (count <= 23) {
-      modalContent.style.top = count * 0.8 + "%";
-    } else {
-      cancelAnimationFrame(idInterval);
-    }
+    animate({
+      duration: 100,
+      timing(timeFraction) {
+        return timeFraction;
+      },
+      draw(progress) {
+        modalContent.style.top = 25 * progress + "%";
+        modalContent.style.left = 41 + "%";
+      },
+    });
   };
 
   const listener = () => {
