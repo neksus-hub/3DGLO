@@ -43,7 +43,6 @@ const calc = (price = 100) => {
     if (calcType.value && calcSquare.value) {
       totalSec =
         price * calcTypeValue * calcSquareValue * calcCountValue * calcDayValue;
-      console.log(totalSec);
       outNum(totalSec);
     } else {
       total.textContent = 0;
