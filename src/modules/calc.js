@@ -1,3 +1,5 @@
+import { animate } from "./helpers";
+
 const calc = (price = 100) => {
   const calcBlock = document.querySelector(".calc-block");
   const calcType = document.querySelector(".calc-type");
@@ -9,29 +11,15 @@ const calc = (price = 100) => {
   let step = 100;
 
   const outNum = (num) => {
-    let n = 0;
-
-    if (num < 100) {
-      step = 1;
-    } else if (num > 100 && num < 1000) {
-      step = 10;
-    } else if (num > 1000 && num < 10000) {
-      step = 100;
-    } else if (num > 10000) {
-      step = 1000;
-    } else if (num > 100000) {
-      step = 10000;
-    }
-
-    let t = Math.round(time / (num / step));
-
-    let interval = setInterval(() => {
-      n += step;
-      if (n == num) {
-        clearInterval(interval);
-      }
-      total.textContent = n;
-    }, t);
+    animate({
+      duration: 100,
+      timing(timeFraction) {
+        return timeFraction;
+      },
+      draw(progress) {
+        total.textContent = Math.round(progress * num);
+      },
+    });
   };
 
   const countCalc = function () {

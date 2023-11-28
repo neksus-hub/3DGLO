@@ -7,7 +7,6 @@ const modal = () => {
 
   let width = document.documentElement.clientWidth;
 
-  let idInterval;
   let count = 0;
 
   const openPopup = () => {
