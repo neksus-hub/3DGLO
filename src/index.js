@@ -6,6 +6,7 @@ import valid from "./modules/valid";
 import tabs from "./modules/tabs";
 import slider from "./modules/slider";
 import calc from "./modules/calc";
+import sendForm from "./modules/sendForm";
 
 const portfolioSliderClasses = {
   sliderBlockClass: `.portfolio-content`,
@@ -33,3 +34,4 @@ slider(
   portfolioSliderClasses.buttonClass
 );
 calc(100);
+sendForm({ formId: "form1", someElem: [{ type: "block", id: "total" }] });
