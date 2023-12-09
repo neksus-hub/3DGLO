@@ -29,6 +29,7 @@ const sendForm = ({ formId, someElem = [] }) => {
     const formBody = {};
 
     statusBlock.textContent = loadText;
+    statusBlock.classList.add("statusBlock");
     form.append(statusBlock);
 
     formData.forEach((val, key) => {

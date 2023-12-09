@@ -738,6 +738,9 @@ footer .web {
 .thanks-block a {
   color: #fff;
 }
+.statusBlock {
+  color: #ffffff;
+}
 @media (max-width: 991px) {
   body {
     font-size: 1.5rem;
