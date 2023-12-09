@@ -353,6 +353,11 @@ main a {
   margin: 0 auto;
   display: block;
 }
+
+.statusBlock {
+  color: #ffffff;
+}
+
 @media (max-width: 1024px) {
   .portfolio-content {
     height: 650px;
@@ -738,9 +743,7 @@ footer .web {
 .thanks-block a {
   color: #fff;
 }
-.statusBlock {
-  color: #ffffff;
-}
+
 @media (max-width: 991px) {
   body {
     font-size: 1.5rem;
@@ -815,6 +818,7 @@ footer .web {
     max-width: 100%;
   }
 }
+
 @media (max-width: 767px) {
   body {
     font-size: 1.3rem;

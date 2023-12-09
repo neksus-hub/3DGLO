@@ -1,4 +1,5 @@
 const sendForm = ({ formId, someElem = [] }) => {
+  const preloader = document.getElementById("preloader");
   const form = document.getElementById(formId);
   const statusBlock = document.createElement("div");
   const loadText = "Загрузка...";
@@ -25,12 +26,13 @@ const sendForm = ({ formId, someElem = [] }) => {
   const submitForm = () => {
     const formElements = form.querySelectorAll("input");
 
+    console.log(preloader);
+
     const formData = new FormData(form);
     const formBody = {};
 
-    statusBlock.textContent = loadText;
-    statusBlock.classList.add("statusBlock");
-    form.append(statusBlock);
+    preloader.style.display = "block";
+    form.append(preloader);
 
     formData.forEach((val, key) => {
       formBody[key] = val;
@@ -49,7 +51,10 @@ const sendForm = ({ formId, someElem = [] }) => {
     if (validate(formElements)) {
       sendData(formBody)
         .then((data) => {
+          preloader.style.display = "none";
+          statusBlock.classList.add("statusBlock");
           statusBlock.textContent = successText;
+          form.append(statusBlock);
 
           formElements.forEach((input) => {
             input.value = "";
